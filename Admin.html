@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Administración de Reservaciones - KAKAO</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-8 text-center text-[#8B4513]">Gestión de Reservaciones</h1>
+        
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <table class="min-w-full">
+                <thead class="bg-[#8B4513] text-white">
+                    <tr>
+                        <th class="px-4 py-3 text-left">ID</th>
+                        <th class="px-4 py-3 text-left">Nombre</th>
+                        <th class="px-4 py-3 text-left">Fecha</th>
+                        <th class="px-4 py-3 text-left">Hora</th>
+                        <th class="px-4 py-3 text-left">Personas</th>
+                        <th class="px-4 py-3 text-left">Estado</th>
+                        <th class="px-4 py-3 text-left">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reserva in reservas %}
+                    <tr class="border-b">
+                        <td class="px-4 py-3">{{ reserva.id }}</td>
+                        <td class="px-4 py-3">{{ reserva.name }}</td>
+                        <td class="px-4 py-3">{{ reserva.date.strftime('%d/%m/%Y') }}</td>
+                        <td class="px-4 py-3">{{ reserva.time }}</td>
+                        <td class="px-4 py-3">{{ reserva.guests }}</td>
+                        <td class="px-4 py-3">
+                            <span class="
+                                {% if reserva.status == 'Pendiente' %}
+                                    bg-yellow-200 text-yellow-800
+                                {% elif reserva.status == 'Aceptada' %}
+                                    bg-green-200 text-green-800
+                                {% else %}
+                                    bg-red-200 text-red-800
+                                {% endif %}
+                                px-2 py-1 rounded-full text-xs
+                            ">
+                                {{ reserva.status }}
+                            </span>
+                        </td>
+                        <td class="px-4 py-3">
+                            <form action="/admin/reserva/{{ reserva.id }}/actualizar" method="POST" class="inline">
+                                <select name="status" onchange="this.form.submit()" class="border rounded px-2 py-1">
+                                    <option value="Pendiente" {% if reserva.status == 'Pendiente' %}selected{% endif %}>Pendiente</option>
+                                    <option value="Aceptada" {% if reserva.status == 'Aceptada' %}selected{% endif %}>Aceptar</option>
+                                    <option value="Rechazada" {% if reserva.status == 'Rechazada' %}selected{% endif %}>Rechazar</option>
+                                </select>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
