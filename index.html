@@ -240,59 +240,44 @@
     <!-- Main Content -->
     <main class="pt-20">
         <!-- Hero Section -->
-        <section id="inicio" class="container mx-auto px-4 py-8 md:py-16 bg-gradient-to-br from-[#F5DEB3] to-[#D2691E]">
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-4 md:gap-8 items-center">
-                <div class="w-full">
-                    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden p-6 md:p-12 transform transition-all hover:scale-105 duration-300">
-                        <h1 class="text-3xl md:text-5xl font-bold text-[#8B4513] mb-4 md:mb-6 leading-tight">
-                            <i class="fas fa-utensils mr-2 md:mr-4 text-[#8B4513]"></i>
-                            Experiencia Gastronómica
-                        </h1>
-                        <p class="text-gray-700 text-lg md:text-xl mb-6 md:mb-8 leading-relaxed">
-                            Descubre una fusión única de sabores y tradición en cada bocado. 
-                            Un viaje culinario que despierta todos tus sentidos.
-                        </p>
-                        <div class="flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-4">
-                            <a href="#comida" class="flex items-center justify-center bg-[#8B4513] text-white px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-opacity-90 transition shadow-lg text-sm md:text-base">
-                                <i class="fas fa-utensils mr-2"></i>
-                                Explora el Menú
-                            </a>
-                            <a href="#ubicacion" class="flex items-center justify-center border-2 border-[#8B4513] text-[#8B4513] px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-[#8B4513] hover:text-white transition text-sm md:text-base">
-                                <i class="fas fa-calendar-alt mr-2"></i>
-                                Reservar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full mt-4 md:mt-0">
-                    <div class="swiper eventos-carousel rounded-2xl shadow-2xl overflow-hidden transform transition-all hover:scale-105 duration-300">
-                        <div class="swiper-wrapper">
-                            <!-- Imagen del Restaurante sin Texto -->
-                            <div class="swiper-slide">
-                                <img 
-                                    src="Imagenes/Restaurante/Restaurante.WebP" 
-                                    alt="Kakao Restaurante" 
-                                    class="w-full h-[300px] md:h-[500px] object-cover"
-                                >
-                            </div>
-                    </div>
+        <section id="inicio" class="container mx-auto px-4 py-16 bg-gradient-to-br from-[#F5DEB3] to-[#D2691E]">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div>
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden p-8 md:p-12 transform transition-all hover:scale-105 duration-300">
+                <h1 class="text-5xl font-bold text-[#8B4513] mb-6 leading-tight">
+                    <i class="fas fa-utensils mr-4 text-[#8B4513]"></i>
+                    Experiencia Gastronómica
+                </h1>
+                <p class="text-gray-700 text-xl mb-8 leading-relaxed">
+                    Descubre una fusión única de sabores y tradición en cada bocado. 
+                    Un viaje culinario que despierta todos tus sentidos.
+                </p>
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <a href="#comida" class="flex items-center justify-center bg-[#8B4513] text-white px-8 py-4 rounded-full hover:bg-opacity-90 transition shadow-lg">
+                        <i class="fas fa-utensils mr-2"></i>
+                        Explora el Menú
+                    </a>
+                    <a href="#ubicacion" class="flex items-center justify-center border-2 border-[#8B4513] text-[#8B4513] px-8 py-4 rounded-full hover:bg-[#8B4513] hover:text-white transition">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Reservar
+                    </a>
                 </div>
             </div>
-        
-            <div id="lightboxOverlay" class="lightbox-overlay">
-                <div class="lightbox-container">
-                    <button id="lightboxClose" class="lightbox-close">&times;</button>
-                    <img id="lightboxImage" class="lightbox-image" src="" alt="Imagen ampliada">
-                </div>
+        </div>
+        <div>
+            <div class="rounded-2xl shadow-2xl overflow-hidden transform transition-all hover:scale-105 duration-300">
+                <img src="{{ url_for('static', filename='Imagenes/Restaurante/Restaurante.png') }}" alt="Plato KAKAO" class="w-full h-auto object-cover">
             </div>
-        
-            <!-- Decorative Elements -->
-            <div class="mt-6 md:mt-8 flex justify-center space-x-4 opacity-50">
-                <i class="fas fa-pepper-hot text-[#8B4513] text-xl md:text-2xl"></i>
-                <i class="fas fa-glass-cheers text-[#8B4513] text-xl md:text-2xl"></i>
-                <i class="fas fa-campground text-[#8B4513] text-xl md:text-2xl"></i>
-            </div>
-        </section>
+        </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="mt-8 flex justify-center space-x-4 opacity-50">
+        <i class="fas fa-pepper-hot text-[#8B4513] text-2xl"></i>
+        <i class="fas fa-glass-cheers text-[#8B4513] text-2xl"></i>
+        <i class="fas fa-campground text-[#8B4513] text-2xl"></i>
+    </div>
+</section>
 
         <!-- Food Section -->
         <section id="comida" class="bg-gray-50 py-16">
