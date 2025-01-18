@@ -107,6 +107,75 @@
         background: none;
         border: none;
     }
+    .lightbox-overlay {
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+}
+
+.lightbox-container {
+   background-color: transparent;
+   border-radius: 20px;
+   padding: 20px;
+   max-width: 90%;
+   max-height: 90vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.lightbox-container video {
+   max-width: 85%;
+   max-height: 80vh;
+   width: auto;
+   height: auto;
+   object-fit: contain;
+   border-radius: 15px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.custom-video::-webkit-media-controls {
+   display: none;
+}
+
+.lightbox-close {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+
+.custom-video::-webkit-media-controls-play-button {
+    background-color: #8B4513;
+    border-radius: 50%;
+    color: white;
+}
+
+.custom-video::-webkit-media-controls-timeline {
+    background-color: rgba(139, 69, 19, 0.5);
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.custom-video::-webkit-media-controls-volume-slider {
+    background-color: rgba(139, 69, 19, 0.5);
+    border-radius: 10px;
+    padding: 0 5px;
+}
+
+.custom-video::-webkit-media-controls-mute-button {
+    background-color: transparent;
+    border-radius: 50%;
+}
     </style>
 </head>
 <body class="bg-white font-sans text-gray-900">
@@ -171,31 +240,31 @@
     <!-- Main Content -->
     <main class="pt-20">
         <!-- Hero Section -->
-        <section id="inicio" class="container mx-auto px-4 py-16 bg-gradient-to-br from-[#F5DEB3] to-[#D2691E]">
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden p-8 md:p-12 transform transition-all hover:scale-105 duration-300">
-                        <h1 class="text-5xl font-bold text-[#8B4513] mb-6 leading-tight">
-                            <i class="fas fa-utensils mr-4 text-[#8B4513]"></i>
+        <section id="inicio" class="container mx-auto px-4 py-8 md:py-16 bg-gradient-to-br from-[#F5DEB3] to-[#D2691E]">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-4 md:gap-8 items-center">
+                <div class="w-full">
+                    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden p-6 md:p-12 transform transition-all hover:scale-105 duration-300">
+                        <h1 class="text-3xl md:text-5xl font-bold text-[#8B4513] mb-4 md:mb-6 leading-tight">
+                            <i class="fas fa-utensils mr-2 md:mr-4 text-[#8B4513]"></i>
                             Experiencia Gastronómica
                         </h1>
-                        <p class="text-gray-700 text-xl mb-8 leading-relaxed">
+                        <p class="text-gray-700 text-lg md:text-xl mb-6 md:mb-8 leading-relaxed">
                             Descubre una fusión única de sabores y tradición en cada bocado. 
                             Un viaje culinario que despierta todos tus sentidos.
                         </p>
-                        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                            <a href="#comida" class="flex items-center justify-center bg-[#8B4513] text-white px-8 py-4 rounded-full hover:bg-opacity-90 transition shadow-lg">
+                        <div class="flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-4">
+                            <a href="#comida" class="flex items-center justify-center bg-[#8B4513] text-white px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-opacity-90 transition shadow-lg text-sm md:text-base">
                                 <i class="fas fa-utensils mr-2"></i>
                                 Explora el Menú
                             </a>
-                            <a href="#ubicacion" class="flex items-center justify-center border-2 border-[#8B4513] text-[#8B4513] px-8 py-4 rounded-full hover:bg-[#8B4513] hover:text-white transition">
+                            <a href="#ubicacion" class="flex items-center justify-center border-2 border-[#8B4513] text-[#8B4513] px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-[#8B4513] hover:text-white transition text-sm md:text-base">
                                 <i class="fas fa-calendar-alt mr-2"></i>
                                 Reservar
                             </a>
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="w-full mt-4 md:mt-0">
                     <div class="swiper eventos-carousel rounded-2xl shadow-2xl overflow-hidden transform transition-all hover:scale-105 duration-300">
                         <div class="swiper-wrapper">
                             <!-- Imagen del Restaurante sin Texto -->
@@ -203,36 +272,27 @@
                                 <img 
                                     src="Imagenes/Restaurante/Restaurante.WebP" 
                                     alt="Kakao Restaurante" 
-                                    class="w-full h-[500px] object-cover"
+                                    class="w-full h-[300px] md:h-[500px] object-cover"
                                 >
                             </div>
-                            
-                            
-                        
-                        <!-- Navigation buttons -->
-                        <div class="swiper-button-next text-[#8B4513]"></div>
-                        <div class="swiper-button-prev text-[#8B4513]"></div>
-                        
-                        <!-- Pagination -->
-                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
-        <div id="lightboxOverlay" class="lightbox-overlay">
-            <div class="lightbox-container">
-                <button id="lightboxClose" class="lightbox-close">&times;</button>
-                <img id="lightboxImage" class="lightbox-image" src="" alt="Imagen ampliada">
-            </div>
-        </div>
         
-
-    <!-- Decorative Elements -->
-    <div class="mt-8 flex justify-center space-x-4 opacity-50">
-        <i class="fas fa-pepper-hot text-[#8B4513] text-2xl"></i>
-        <i class="fas fa-glass-cheers text-[#8B4513] text-2xl"></i>
-        <i class="fas fa-campground text-[#8B4513] text-2xl"></i>
-    </div>
-</section>
+            <div id="lightboxOverlay" class="lightbox-overlay">
+                <div class="lightbox-container">
+                    <button id="lightboxClose" class="lightbox-close">&times;</button>
+                    <img id="lightboxImage" class="lightbox-image" src="" alt="Imagen ampliada">
+                </div>
+            </div>
+        
+            <!-- Decorative Elements -->
+            <div class="mt-6 md:mt-8 flex justify-center space-x-4 opacity-50">
+                <i class="fas fa-pepper-hot text-[#8B4513] text-xl md:text-2xl"></i>
+                <i class="fas fa-glass-cheers text-[#8B4513] text-xl md:text-2xl"></i>
+                <i class="fas fa-campground text-[#8B4513] text-xl md:text-2xl"></i>
+            </div>
+        </section>
 
         <!-- Food Section -->
         <section id="comida" class="bg-gray-50 py-16">
@@ -273,64 +333,57 @@
             </div>
         </section>
 
-        <section id="videos" class="container mx-auto px-4 py-16 bg-gradient-to-br from-[#F5DEB3] to-[#D2691E]">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-5xl font-bold text-[#8B4513] mb-4">
-                        Momentos KAKAO
-                    </h2>
-                    <p class="text-xl text-gray-700 max-w-2xl mx-auto">
-                        Sumérgete en la magia de nuestra cocina a través de estos momentos únicos que capturan la esencia de nuestra experiencia gastronómica.
-                    </p>
-                </div>
+        <!-- Sección de Menú QR -->
+<section id="qr-menu" class="container mx-auto px-4 py-16 bg-gradient-to-br from-[#F5DEB3] to-[#D2691E]">
+    <div class="max-w-2xl mx-auto text-center">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all hover:scale-105 duration-300">
+            <div class="p-8 md:p-12">
+                <h2 class="text-4xl font-bold mb-6 text-[#8B4513]">
+                    <i class="fas fa-qrcode mr-4 text-[#8B4513]"></i>
+                    Menú Digital KAKAO
+                </h2>
                 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
-                        <video 
-                            autoplay 
-                            loop 
-                            muted 
-                            playsinline 
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        >
-                            <source src="Videos/Video4.WebM" type="video/mp4">
-                        </video>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <!-- QR Code Container -->
+                    <div class="w-48 h-48 bg-[#8B4513] rounded-xl shadow-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="w-40 h-40">
+                            <!-- Placeholder for actual QR code -->
+                            <rect width="180" height="180" x="10" y="10" fill="white" rx="10"/>
+                            <path d="M30 50h40v40H30z" fill="#8B4513"/>
+                            <path d="M80 50h40v40H80z" fill="#8B4513" fill-opacity="0.6"/>
+                            <text x="100" y="180" text-anchor="middle" fill="#8B4513" font-size="16">
+                                Escanea para ver el menú
+                            </text>
+                        </svg>
                     </div>
-                    
-                    <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
-                        <video 
-                            autoplay 
-                            loop 
-                            muted 
-                            playsinline 
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        >
-                            <source src="Videos/Video2.WebM" type="video/mp4">
-                        </video>
+
+                    <!-- Description and Download Section -->
+                    <div class="text-left max-w-md">
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Descubre nuestra selección gourmet en un solo click. 
+                            Escanea el código QR o descarga directamente nuestro menú completo en PDF.
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <a href="path/to/menu.pdf" target="_blank" class="flex items-center bg-[#8B4513] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition">
+                                <i class="fas fa-file-pdf mr-2"></i>
+                                Descargar Menú
+                            </a>
+                            <span class="text-sm text-gray-500">Tamaño: 2.5 MB</span>
+                        </div>
                     </div>
-                    
-                    <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
-                        <video 
-                            autoplay 
-                            loop 
-                            muted 
-                            playsinline 
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        >
-                            <source src="Videos/Video3.WebM" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-        
-                <!-- Decorative Elements -->
-                <div class="mt-12 flex justify-center space-x-6 opacity-50">
-                    <i class="fas fa-utensils text-[#8B4513] text-3xl"></i>
-                    <i class="fas fa-cocktail text-[#8B4513] text-3xl"></i>
-                    <i class="fas fa-wine-glass-alt text-[#8B4513] text-3xl"></i>
-                    <i class="fas fa-pepper-hot text-[#8B4513] text-3xl"></i>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="mt-8 flex justify-center space-x-4 opacity-50">
+            <i class="fas fa-utensils text-[#8B4513] text-2xl"></i>
+            <i class="fas fa-cocktail text-[#8B4513] text-2xl"></i>
+            <i class="fas fa-wine-glass-alt text-[#8B4513] text-2xl"></i>
+        </div>
+    </div>
+</section>
+
 
         <section id="menu" class="container mx-auto px-4 py-16">
             <h2 class="text-4xl font-bold text-center mb-12 text-[#6E4A3B]">Nuestro Menú Completo</h2>
@@ -444,56 +497,194 @@
             </div>
         </section>
 
-        <!-- Sección de Menú QR -->
-<section id="qr-menu" class="container mx-auto px-4 py-16 bg-gradient-to-br from-[#F5DEB3] to-[#D2691E]">
-    <div class="max-w-2xl mx-auto text-center">
-        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all hover:scale-105 duration-300">
-            <div class="p-8 md:p-12">
-                <h2 class="text-4xl font-bold mb-6 text-[#8B4513]">
-                    <i class="fas fa-qrcode mr-4 text-[#8B4513]"></i>
-                    Menú Digital KAKAO
-                </h2>
+        <section id="videos" class="container mx-auto px-4 py-16 bg-gradient-to-br from-[#F5DEB3] to-[#D2691E]">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-5xl font-bold text-[#8B4513] mb-4">
+                        Momentos KAKAO
+                    </h2>
+                    <p class="text-xl text-gray-700 max-w-2xl mx-auto">
+                        Sumérgete en la magia de nuestra cocina a través de estos momentos únicos que capturan la esencia de nuestra experiencia gastronómica.
+                    </p>
+                </div>
                 
-                <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-                    <!-- QR Code Container -->
-                    <div class="w-48 h-48 bg-[#8B4513] rounded-xl shadow-lg flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="w-40 h-40">
-                            <!-- Placeholder for actual QR code -->
-                            <rect width="180" height="180" x="10" y="10" fill="white" rx="10"/>
-                            <path d="M30 50h40v40H30z" fill="#8B4513"/>
-                            <path d="M80 50h40v40H80z" fill="#8B4513" fill-opacity="0.6"/>
-                            <text x="100" y="180" text-anchor="middle" fill="#8B4513" font-size="16">
-                                Escanea para ver el menú
-                            </text>
-                        </svg>
+                <!-- Grid de Videos Simétrica -->
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
+                        <video 
+                            autoplay 
+                            loop 
+                            muted 
+                            playsinline 
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        >
+                            <source src="Videos/Video4.WebM" type="video/mp4">
+                        </video>
                     </div>
+                    
+                    <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
+                        <video 
+                            autoplay 
+                            loop 
+                            muted 
+                            playsinline 
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        >
+                            <source src="Videos/Video2.WebM" type="video/mp4">
+                        </video>
+                    </div>
+                    
+                    <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
+                        <video 
+                            autoplay 
+                            loop 
+                            muted 
+                            playsinline 
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        >
+                            <source src="Videos/Video3.WebM" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+        
+                <!-- Primera Grid Mixta -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <!-- Video Grande -->
+            <div class="md:col-span-2 md:row-span-2">
+                <div class="group relative rounded-2xl overflow-hidden shadow-2xl aspect-square transform transition-all hover:scale-105 duration-300">
+                    <video 
+                        autoplay 
+                        loop 
+                        muted 
+                        playsinline 
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    >
+                        <source src="Imagenes/Eventos/Evento4.webm" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <!-- Imágenes Pequeñas -->
+            <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300 aspect-square">
+                <img src="Imagenes/Eventos/Evento5.webp" alt="Kakao momento 2" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300 aspect-square">
+                <img src="Imagenes/Eventos/Evento6.webp" alt="Kakao momento 3" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300 aspect-square">
+                <img src="Imagenes/Eventos/Evento7.webp" alt="Kakao momento 4" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300 aspect-square">
+                <img src="Imagenes/Eventos/Evento8.webp" alt="Kakao momento 5" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+            </div>
+        </div>
 
-                    <!-- Description and Download Section -->
-                    <div class="text-left max-w-md">
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            Descubre nuestra selección gourmet en un solo click. 
-                            Escanea el código QR o descarga directamente nuestro menú completo en PDF.
-                        </p>
-                        <div class="flex items-center space-x-4">
-                            <a href="path/to/menu.pdf" target="_blank" class="flex items-center bg-[#8B4513] text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition">
-                                <i class="fas fa-file-pdf mr-2"></i>
-                                Descargar Menú
-                            </a>
-                            <span class="text-sm text-gray-500">Tamaño: 2.5 MB</span>
-                        </div>
-                    </div>
+        <!-- Segunda Grid Mixta -->
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-4 mb-8">
+            <div class="md:col-span-2 group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300 aspect-video">
+                <img 
+                    src="Imagenes/Eventos/Evento9.webp" 
+                    alt="Evento 9" 
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                >
+            </div>
+            <div class="md:col-span-2 group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300 aspect-video">
+                <img 
+                    src="Imagenes/Eventos/Evento11.webp" 
+                    alt="Kakao momento 7" 
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                >
+            </div>
+            <div class="md:col-span-2 group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300 aspect-video">
+                <img 
+                    src="Imagenes/Eventos/Evento10.webp" 
+                    alt="Momento 7" 
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                >
+            </div>
+        </div>
+
+        <!-- Tercera Grid con Proporción Vertical -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <!-- Primera imagen -->
+            <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
+                <div class="aspect-square">
+                    <img 
+                        src="im" 
+                        alt="Kakao momento 9" 
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    >
+                </div>
+            </div>
+            
+            <!-- Video central (formato Instagram Reel) -->
+            <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
+                <div class="aspect-[9/16] mx-auto max-w-[400px]">
+                    <video 
+                        autoplay 
+                        loop 
+                        muted 
+                        playsinline 
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    >
+                        <source src="Imagenes/Eventos/Evento14.webm" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            
+            <!-- Tercera imagen -->
+            <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
+                <div class="aspect-square">
+                    <img 
+                        src="images/foto11.jpg" 
+                        alt="Kakao momento 11" 
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- Cuarta Grid Mixta -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
+                <div class="aspect-square">
+                    <img src="Imagenes/Eventos/Evento13.webp" alt="Kakao momento 12" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                </div>
+            </div>
+            <div class="md:row-span-2 group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
+                <div class="aspect-[9/16]">
+                    <video 
+                        autoplay 
+                        loop 
+                        muted 
+                        playsinline 
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    >
+                        <source src="Imagenes/Eventos/Evento12.webp" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
+                <div class="aspect-square">
+                    <img src="images/foto14.jpg" alt="Kakao momento 14" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                </div>
+            </div>
+            <div class="md:col-span-2 group relative rounded-2xl overflow-hidden shadow-2xl transform transition-all hover:scale-105 duration-300">
+                <div class="aspect-video">
+                    <img src="images/foto15.jpg" alt="Kakao momento 15" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
                 </div>
             </div>
         </div>
 
         <!-- Decorative Elements -->
-        <div class="mt-8 flex justify-center space-x-4 opacity-50">
-            <i class="fas fa-utensils text-[#8B4513] text-2xl"></i>
-            <i class="fas fa-cocktail text-[#8B4513] text-2xl"></i>
-            <i class="fas fa-wine-glass-alt text-[#8B4513] text-2xl"></i>
+        <div class="mt-12 flex justify-center space-x-6 opacity-50">
+            <i class="fas fa-utensils text-[#8B4513] text-3xl"></i>
+            <i class="fas fa-cocktail text-[#8B4513] text-3xl"></i>
+            <i class="fas fa-wine-glass-alt text-[#8B4513] text-3xl"></i>
+            <i class="fas fa-pepper-hot text-[#8B4513] text-3xl"></i>
         </div>
     </div>
 </section>
+
 
         <!-- Location Section -->
         <section id="ubicacion" class="bg-gray-50 py-16">
@@ -649,6 +840,62 @@
             lightboxOverlay.style.display = 'none';
         }
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const lightboxOverlay = document.getElementById('lightboxOverlay');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+    
+    const zoomableMedia = document.querySelectorAll(
+        '#comida img, #menu img, #videos img, #videos video, #inicio .swiper-slide img'
+    );
+
+    zoomableMedia.forEach(media => {
+        media.style.cursor = 'pointer';
+        media.addEventListener('click', function() {
+            const isVideo = this.tagName.toLowerCase() === 'video';
+            
+            if (isVideo) {
+                const videoElement = document.createElement('video');
+                videoElement.src = this.querySelector('source').src;
+                videoElement.autoplay = true;
+                videoElement.classList.add('custom-video');
+                videoElement.style.borderRadius = '15px';
+                videoElement.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                
+                // Click para pausar/reproducir
+                videoElement.addEventListener('click', function() {
+                    if (this.paused) {
+                        this.play();
+                    } else {
+                        this.pause();
+                    }
+                });
+                
+                lightboxImage.replaceWith(videoElement);
+            } else {
+                lightboxImage.src = this.src;
+            }
+            
+            lightboxOverlay.style.display = 'flex';
+        });
+    });
+
+    lightboxClose.addEventListener('click', resetAndClose);
+    lightboxOverlay.addEventListener('click', function(event) {
+        if (event.target === lightboxOverlay) {
+            resetAndClose();
+        }
+    });
+
+    function resetAndClose() {
+        const videoElement = lightboxOverlay.querySelector('video');
+        if (videoElement) {
+            videoElement.replaceWith(lightboxImage);
+        }
+        lightboxOverlay.style.display = 'none';
+    }
 });
         </script>
 </body>
